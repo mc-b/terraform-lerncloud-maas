@@ -2,15 +2,6 @@
 #   Provider 
 #
 
-terraform {
-  required_providers {
-    maas = {
-      source = "suchpuppet/maas"
-      version = "3.1.3"
-    }
-  }
-}
-
 provider "maas" {
     # Configuration options
     api_version = "2.0"
