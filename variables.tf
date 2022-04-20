@@ -1,39 +1,64 @@
 
 # Allgemeine Variablen
 
-
-# Public Variablen
-
 variable "module" {
+    description = "Modulname: wird als Hostname verwendet"
     type    = string
     default = "base"
 }
 
-variable "userdata" {
-    description = "Cloud-init Script"
-    default = "/../../modules/base.yaml"
+variable "description" {
+  description = "Beschreibung VM"
+  type        = string
+  default     = "Beschreibung VM"
+}
+
+variable "memory" {
+    description = "Memory in GB: bestimmt Instance in der Cloud"
+    type    = number
+    default = 2
+}
+
+variable "storage" {
+    description = "Groesse Disk"
+    type    = number
+    default = 32
+}
+
+variable "cores" {
+    description = "Anzahl CPUs"
+    type    = number
+    default = 1
 }
 
 variable "ports" {
+    description = "Ports welche in der Firewall geoeffnet sind"
     type    = list(number)
     default = [ 22, 80 ]
 }
 
-# wird nicht ausgewertet - nur zu Kompatibilitaet zu Mulitpass
-variable "mem" {
+variable "userdata" {
+    description = "Cloud-init Script"
     type    = string
-    default = "2GB"
+    default = "cloud-init.yaml"
 }
 
-# wird nicht ausgewertet - nur zu Kompatibilitaet zu Mulitpass
-variable "disk" {
+# Zugriffs Informationen
+
+variable "url" {
+    description = "Evtl. URL fuer den Zugriff auf das API des Racks Servers"
     type    = string
-    default = "32GB"
 }
 
-# wird nicht ausgewertet - nur zu Kompatibilitaet zu Mulitpass
-variable "cpu" {
-    default = 2
+variable "key" {
+    description = "API Key, Token etc. fuer Zugriff"
+    type    = string
+    sensitive   = true
+}
+
+variable "vpn" {
+    description = "Optional VPN welches eingerichtet werden soll"
+    type    = string
 }
 
 # Scripts

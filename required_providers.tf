@@ -1,8 +1,11 @@
+###
+# Separate Datei wegen Defaultwerten Terraform
+
 terraform {
   required_providers {
     maas = {
-      source = "suchpuppet/maas"
-      version = "3.1.3"
+      source = "mc-b/lernmaas"
+      version = "~>1.0.1"
     }
   }
 }
