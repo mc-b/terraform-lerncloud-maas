@@ -22,7 +22,7 @@ variable "memory" {
 variable "storage" {
     description = "Groesse Disk"
     type    = number
-    default = 32
+    default = 12
 }
 
 variable "cores" {
