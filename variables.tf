@@ -3,14 +3,43 @@
 
 variable "machines" {
   type = map(object({
-    module      = string       # "Modulname: wird als Hostname verwendet"
-    description = string       # "Beschreibung VM"
-    memory      = number       # "Memory in GB: bestimmt Instance in der Cloud"
-    storage     = number       # "Groesse Disk"
-    cores       = number       # "Anzahl CPUs"
-    ports       = list(number) # "Ports welche in der Firewall geoeffnet sind"
-    userdata    = string       # "Cloud-init Script"
+    hostname    = string           # "Hostname" 
+    description = optional(string) # "Beschreibung VM"
+    memory      = optional(number) # "Memory in GB: bestimmt Instance in der Cloud"
+    storage     = optional(number) # "Groesse Disk"
+    cores       = optional(number) # "Anzahl CPUs"
+    userdata    = string           # "Cloud-init Script"
   }))
+}
+
+variable "description" {
+  description = "Beschreibung VM"
+  type        = string
+  default     = "Beschreibung VM"
+}
+
+variable "memory" {
+  description = "Memory in GB: bestimmt Instance in der Cloud"
+  type        = number
+  default     = 2
+}
+
+variable "storage" {
+  description = "Groesse Disk"
+  type        = number
+  default     = 12
+}
+
+variable "cores" {
+  description = "Anzahl CPUs"
+  type        = number
+  default     = 1
+}
+
+variable "ports" {
+  description = "Ports welche in der Firewall geoeffnet sind"
+  type        = list(number)
+  default     = [22, 80]
 }
 
 # Verarbeiten der userdata-Datei im Modul

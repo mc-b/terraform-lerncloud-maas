@@ -17,12 +17,12 @@ output "ip_vm" {
 }
 
 output "fqdn_vm" {
-  value = { for key, vm in maas_vm_instance.vm : key => "${vm.hostname}.maas" }
+  value       = { for key, vm in maas_vm_instance.vm : key => "${vm.hostname}.maas" }
   description = "The FQDN of the server instance."
 }
 
 output "description" {
-  value = { for key, machine in var.machines : key => machine.description }
+  value       = { for key, machine in var.machines : key => machine.description }
   description = "Description of each VM."
 }
 
