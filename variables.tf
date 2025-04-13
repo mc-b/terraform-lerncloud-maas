@@ -42,12 +42,6 @@ variable "ports" {
   default     = [22, 80]
 }
 
-# Verarbeiten der userdata-Datei im Modul
-data "template_file" "userdata" {
-  for_each = var.machines
-  template = file(each.value.userdata) # Lade die Datei basierend auf dem übergebenen Pfad
-}
-
 # Zugriffs Informationen
 
 variable "url" {

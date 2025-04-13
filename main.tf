@@ -19,10 +19,7 @@ resource "maas_vm_instance" "vm" {
   #ports       = var.ports
 
   # Verwende den verarbeiteten Cloud-init Inhalt
-  user_data = data.template_file.userdata[each.key].rendered
+  user_data = each.value.userdata
 
   zone = var.vpn
 }
-
-
-
