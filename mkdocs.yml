@@ -1,0 +1,4 @@
+site_name: terraform-lerncloud-maas
+docs_dir: .
+nav:
+- README: README.md

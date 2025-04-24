@@ -1,0 +1,19 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: terraform-lerncloud-maas
+  namespace: mc-b
+  description: LernCloud Terraform MAAS.io Modul
+  tags: []
+  links:
+  - url: https://github.com/mc-b/terraform-lerncloud-maas
+    title: Repository
+    icon: github
+  annotations:
+    github.com/project-slug: mc-b/terraform-lerncloud-maas
+    backstage.io/source-location: url:https://github.com/mc-b/terraform-lerncloud-maas
+    backstage.io/techdocs-ref: url:https://github.com/mc-b/terraform-lerncloud-maas
+spec:
+  type: other
+  lifecycle: production
+  owner: group:mc-b/mc-b
