@@ -4,7 +4,12 @@ metadata:
   name: terraform-lerncloud-maas
   namespace: mc-b
   description: LernCloud Terraform MAAS.io Modul
-  tags: []
+  tags:
+  - terraform
+  - lerncloud
+  - opentofu  
+  - maas.io
+  - lernmaas  
   links:
   - url: https://github.com/mc-b/terraform-lerncloud-maas
     title: Repository
@@ -12,8 +17,9 @@ metadata:
   annotations:
     github.com/project-slug: mc-b/terraform-lerncloud-maas
     backstage.io/source-location: url:https://github.com/mc-b/terraform-lerncloud-maas
-    backstage.io/techdocs-ref: url:https://github.com/mc-b/terraform-lerncloud-maas
+    # backstage.io/techdocs-ref: url:https://github.com/mc-b/terraform-lerncloud-maas
 spec:
   type: other
   lifecycle: production
   owner: group:mc-b/mc-b
+  subcomponentOf: component:mc-b/terraform-provider-lerncloud
