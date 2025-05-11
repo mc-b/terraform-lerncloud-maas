@@ -1,5 +1,5 @@
 apiVersion: backstage.io/v1alpha1
-kind: Component
+kind: Resource
 metadata:
   name: terraform-lerncloud-maas
   namespace: mc-b
@@ -19,7 +19,7 @@ metadata:
     backstage.io/source-location: url:https://github.com/mc-b/terraform-lerncloud-maas
     # backstage.io/techdocs-ref: url:https://github.com/mc-b/terraform-lerncloud-maas
 spec:
-  type: other
+  type: library
   lifecycle: production
   owner: group:mc-b/mc-b
-  subcomponentOf: component:mc-b/terraform-provider-lerncloud
+  dependencyOf: component:mc-b/terraform-provider-lerncloud
