@@ -60,3 +60,10 @@ variable "vpn" {
   type        = string
   default     = "default"
 }
+
+# nur lernmaas Modul!
+variable "vm_per_host" {
+  description = "Anzahl VMs welche pro VM Host angelegt werden sollen"
+  type        = number
+  default     = 1
+}
